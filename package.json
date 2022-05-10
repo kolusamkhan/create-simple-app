@@ -1,0 +1,20 @@
+{
+  "name": "create-ak-simple-app",
+  "version": "1.0.0",
+  "description": "simple package for experiments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolusamkhan/create-simple-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kolusamkhan/create-simple-app/issues"
+  },
+  "homepage": "https://github.com/kolusamkhan/create-simple-app#readme"
+}
