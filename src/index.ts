@@ -1,1 +1,1 @@
-export {echo as echoMessage} from './simple-echo';
+export {echo as echoMessage} from './simple-echo.js';
