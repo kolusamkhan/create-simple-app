@@ -1,12 +1,13 @@
 import { promisify } from "util";
 import { exec } from "child_process";
-import { loadJsonFile } from "load-json-file";
+import {sync as loadJsonFile} from "load-json-file";
 import { join } from "path";
 
 const execPromise = promisify(exec);
 
 async function runShellCmd(command) {
   try {
+    console.log('command executed', command);
     const { stdout, stderr } = await execPromise(command);
     console.log(stdout);
     console.log(stderr);
@@ -15,12 +16,13 @@ async function runShellCmd(command) {
   }
 }
 
-const { version } = await loadJsonFile(join(process.cwd(), "package.json"));
 
 async function tag() {
-  await runShellCmd(`git config --global core.editor "code --wait"`);
+  const { version } = await loadJsonFile(join(process.cwd(), "package.json"));
+  console.log('current tag version ', version);
+  //await runShellCmd(`git config --global code.editor "code --wait"`);
   await runShellCmd(`git add .`);
-  await runShellCmd(`git commit`);
+  await runShellCmd(`git commit -m 'commit for ${version}'`);
   await runShellCmd(`git tag v${version}`);
 }
 tag();
