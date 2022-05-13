@@ -1,6 +1,6 @@
 {
   "name": "create-ak-simple-app",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "simple package for experiments",
   "type": "module",
   "main": "dist-cjs/index.js",
@@ -16,7 +16,6 @@
     "tag": "node ./configuration/tag.js",
     "auto-changelog": "auto-changelog --hide-credit --breaking-pattern \"breaking:\"",
     "gen-changelog": "npm run auto-changelog && git add CHANGELOG.md && git commit -m \"doc: change-log updated.\"",
-
     "build": "npm-run-all -s test clean tsc tsc-cjs fixup",
     "fixup": "./fixup",
     "tsc": "tsc",
