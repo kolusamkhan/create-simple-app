@@ -28,7 +28,7 @@
 
     "fixup": "./fixup",
 
-    "build": "npm-run-all -s test clean tsc tsc-cjs fixup gen-changelog tag ",
+    "build": "npm-run-all -s test clean tsc tsc-cjs fixup tag ",
     "prepare": "npm run safety-check && npm run build",
     "_prepublishOnly": "npm run build"
   },
