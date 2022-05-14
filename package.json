@@ -1,6 +1,6 @@
 {
   "name": "create-ak-simple-app",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "simple package for experiments",
   "type": "module",
   "main": "dist-cjs/index.js",
@@ -10,21 +10,21 @@
     "require": "./dist-cjs/index.js"
   },
   "scripts": {
+    "safety-check": "git pull && git status && npm run lint && npm run lint-fix",
+    "clean": "rimraf ./dist-esm ./dist-cjs",
     "format": "prettier --check \"src/**/*.ts\" --write",
     "lint": "eslint --ext \".ts,.js\" src --quiet",
     "lint-fix": "eslint --ext \".ts,.js\" src --fix",
-    "tag": "node ./configuration/tag.js",
+    "test": "jest --passWithNoTests",
     "auto-changelog": "auto-changelog --hide-credit --breaking-pattern \"breaking:\"",
     "gen-changelog": "npm run auto-changelog && git add CHANGELOG.md && git commit -m \"doc: change-log updated.\"",
-
-    "build": "npm-run-all -s test clean tsc tsc-cjs fixup",
-    "fixup": "./fixup",
+    "tag": "node ./configuration/tag.js",
     "tsc": "tsc",
     "tsc-cjs": "tsc --p tsconfig-cjs.json",
-    "clean": "rimraf ./dist-esm ./dist-cjs",
-    "prepare": "npm run build",
-    "_prepublishOnly": "npm run build",
-    "test": "jest --passWithNoTests"
+    "fixup": "./fixup",
+    "build": "npm-run-all -s test clean tsc tsc-cjs fixup tag ",
+    "prepare": "npm run safety-check && npm run build",
+    "_prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
