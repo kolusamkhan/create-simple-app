@@ -1,6 +1,6 @@
 {
   "name": "create-ak-simple-app",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "simple package for experiments",
   "bin": "bin/setup.js",
   "type": "module",
