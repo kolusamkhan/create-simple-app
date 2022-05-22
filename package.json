@@ -2,7 +2,7 @@
   "name": "create-ak-simple-app",
   "version": "1.0.12",
   "description": "simple package for experiments",
-  "bin": "bin/setup.js",
+  "bin": "bin/index.ts",
   "type": "module",
   "main": "dist-cjs/index.js",
   "module": "dist-esm/index.js",
