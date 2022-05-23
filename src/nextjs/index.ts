@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import {program} from 'commander';
 import prompts from 'prompts';
 import updateCheck from 'update-check';
-import packageJson from './package.json';
+import packageJson from '../../package.json';
 import { validateNpmName } from './helpers/validate-pkg.js';
 import { getPkgManager } from './helpers/get-pkg-manager.js';
 import {createApp} from './create-app.js';

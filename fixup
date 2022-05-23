@@ -15,5 +15,5 @@ cat >dist-esm/package.json <<!EOF
 }
 !EOF
 
-find src -name '*.d.ts' -exec cp {} dist/mjs \;
-find src -name '*.d.ts' -exec cp {} dist/cjs \;
+find src -name '*.d.ts' -exec cp {} dist-esm \;
+find src -name '*.d.ts' -exec cp {} dist-cjs \;
