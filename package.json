@@ -1,8 +1,8 @@
 {
   "name": "create-ak-simple-app",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "simple package for experiments",
-  "bin": "dist-esm/src/nextjs/index.js",
+  "bin": "nextjs/index.js",
   "type": "module",
   "main": "dist-cjs/index.js",
   "module": "dist-esm/index.js",
@@ -79,6 +79,7 @@
   },
   "files": [
     "dist-*/",
-    "templates/**/*"
+    "templates/**/*",
+    "nextjs/**/*"
   ]
 }
